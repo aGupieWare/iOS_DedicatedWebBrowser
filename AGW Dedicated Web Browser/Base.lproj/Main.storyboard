@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AGW_Dedicated_Web_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Zw4-bl-iBO" kind="presentation" identifier="AGWDedicatedWebViewControllerSegue" id="xTS-Y1-fum"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="194"/>
+        </scene>
+        <!--Dedicated Web View Controller-->
+        <scene sceneID="MaJ-km-bHA">
+            <objects>
+                <viewController id="Zw4-bl-iBO" customClass="AGWDedicatedWebViewController" customModule="AGW_Dedicated_Web_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RBJ-2k-JDa"/>
+                        <viewControllerLayoutGuide type="bottom" id="buR-z7-xNd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lBO-f7-YLr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUH-Gx-AK7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGW-qX-x5n">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <items>
+                                            <navigationItem title="Title" id="Ax8-Xn-RL0"/>
+                                        </items>
+                                    </navigationBar>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-Xu-6bA">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="2"/>
+                                    </progressView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-gH-glx">
+                                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                        <items>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="yFl-OD-eyS"/>
+                                            <barButtonItem title="&lt;" id="pXX-Lz-YKO">
+                                                <connections>
+                                                    <action selector="agwBackwardButtonPressed:" destination="Zw4-bl-iBO" id="qG0-vk-lM0"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="fee-Bf-f5K"/>
+                                            <barButtonItem title="&gt;" id="daK-z4-pf4">
+                                                <connections>
+                                                    <action selector="agwForwardButtonPressed:" destination="Zw4-bl-iBO" id="0GC-tt-JX0"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ynd-Jv-x2O"/>
+                                            <barButtonItem systemItem="refresh" id="cV0-YM-gET">
+                                                <connections>
+                                                    <action selector="agwRefreshButtonPressed:" destination="Zw4-bl-iBO" id="FO3-VB-aJW"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="ej9-DV-dig"/>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oIb-gH-glx" secondAttribute="bottom" id="0uO-EO-fau"/>
+                                    <constraint firstItem="DvE-Xu-6bA" firstAttribute="top" secondItem="KGW-qX-x5n" secondAttribute="bottom" id="4YY-GN-dGa"/>
+                                    <constraint firstItem="KGW-qX-x5n" firstAttribute="top" secondItem="lUH-Gx-AK7" secondAttribute="top" id="8Uh-1C-Mvn"/>
+                                    <constraint firstAttribute="trailing" secondItem="KGW-qX-x5n" secondAttribute="trailing" id="Jb5-R7-bDk"/>
+                                    <constraint firstAttribute="trailing" secondItem="oIb-gH-glx" secondAttribute="trailing" id="PXH-rD-pgt"/>
+                                    <constraint firstAttribute="trailing" secondItem="DvE-Xu-6bA" secondAttribute="trailing" id="RDk-hy-547"/>
+                                    <constraint firstItem="oIb-gH-glx" firstAttribute="leading" secondItem="lUH-Gx-AK7" secondAttribute="leading" id="VNX-uD-wgU"/>
+                                    <constraint firstItem="DvE-Xu-6bA" firstAttribute="leading" secondItem="lUH-Gx-AK7" secondAttribute="leading" id="ruI-ZB-TGO"/>
+                                    <constraint firstItem="KGW-qX-x5n" firstAttribute="leading" secondItem="lUH-Gx-AK7" secondAttribute="leading" id="tiI-wJ-sfl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="buR-z7-xNd" firstAttribute="top" secondItem="lUH-Gx-AK7" secondAttribute="bottom" id="6kE-i4-1yg"/>
+                            <constraint firstItem="lUH-Gx-AK7" firstAttribute="leading" secondItem="lBO-f7-YLr" secondAttribute="leading" id="ftb-fh-4fe"/>
+                            <constraint firstItem="lUH-Gx-AK7" firstAttribute="top" secondItem="lBO-f7-YLr" secondAttribute="top" id="rKW-9C-WsD"/>
+                            <constraint firstAttribute="trailing" secondItem="lUH-Gx-AK7" secondAttribute="trailing" id="uql-Zs-nhg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="agwBackwardButton" destination="pXX-Lz-YKO" id="0l0-RB-foE"/>
+                        <outlet property="agwForwardButton" destination="daK-z4-pf4" id="t0w-Ak-3uw"/>
+                        <outlet property="agwNavigationBar" destination="KGW-qX-x5n" id="0zv-uN-lLZ"/>
+                        <outlet property="agwNavigationBarTitleItem" destination="Ax8-Xn-RL0" id="cyU-dh-Ene"/>
+                        <outlet property="agwProgressView" destination="DvE-Xu-6bA" id="pyi-MY-mZ9"/>
+                        <outlet property="agwRefreshButton" destination="ej9-DV-dig" id="SxJ-Va-dXF"/>
+                        <outlet property="agwWebViewContainer" destination="lUH-Gx-AK7" id="DnD-Rv-ncm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2u-gK-v6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402" y="194"/>
+        </scene>
+    </scenes>
+</document>
